@@ -1,59 +1,49 @@
 #+title: ソフトウェアエンジニア採用テスト
 
-Space Cubics のソフトウェアエンジニアのポジションに応募して頂いた方に
-受けてもらうテストです。受験者の経験に合わせ、 3つの中から得意なものを
-やってもらったり、Space Cubicsから実施してもらうテストを指定します。
+Space Cubics のソフトウェアエンジニアのポジションに応募して頂いた方に受けてもらうテストです。
+受験者の経験に合わせ、 3つの中から得意なものをやってもらったり、Space Cubicsから実施してもらうテストを指定します。
 
-ネットや本など、利用できるものはすべて利用してかまいません。もちろん
-AI を利用しても問題ありません。ただし利用したものは教えてください。
+ネットや本など、利用できるものはすべて利用してかまいません。もちろん AI を利用しても問題ありません。ただし利用したものは教えてください。
 
 * Fix Zephyr Issues
 
   Space Cubics が開発するOBCには、[[https://zephyrproject.org/][Zephyr RTOS]] を採用しています。Zephyr
   は、GitHubでオープンに開発されており、日々 issue が発行されています。
-  現在 open になっている Zephyr の [[https://github.com/zephyrproject-rtos/zephyr/issues][issue]] のうち、任意の複数の issueを
-  選択し、修正案を作成後、実際に Upstream に宛てて Pull Requestを作成
-  してください。 Issue の中には、 “[[https://github.com/zephyrproject-rtos/zephyr/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22][Good first issue]]” と呼ばれる、初め
-  てコントリビュートする人に優しい issue もあります。
+  現在 open になっている Zephyr の [[https://github.com/zephyrproject-rtos/zephyr/issues][issue]] のうち、任意の複数の issue
+  を選択し、修正案を作成後、実際に Upstream に宛てて Pull Requestを作成してください。 
+  issue の中には、 “[[https://github.com/zephyrproject-rtos/zephyr/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22][Good first issue]]” 
+  と呼ばれる、初めてコントリビュートする人に優しい issue もあります。
 
   - GitHubアカウントを保持していない場合は、新規に作成してください
-  - 選択する issue については、Cのソースコードを修正するものを選択して
-    ください(CMakeや、 Python スクリプト、ドキュメントなどの修正は除く)
+  - 選択する issue については、Cのソースコードを修正するものを選択してください (CMakeや、 Python スクリプト、ドキュメントなどの修正は除く)
   - Git のコミットに関しては、[[https://cbea.ms/git-commit/][How to Write a Git Commit Message]] や
     [[https://medium.com/@nawarpianist/git-commit-best-practices-dab8d722de99][Git commit best practices]] などを一読することをお勧めします
 
 * Create Telemetry Decoding Tool
 
-  =decode/ds_tlm.bin= は、NASAが開発する [[https://cfs.gsfc.nasa.gov/][cFS]] と呼ばれるオープンソース
-  のフライトソフトウェアが生成した Telemetry (100 telemetry分) のバイナリーファイルです。
-  以下の情報をもとに、Telemetryのフォーマットを調査して、バイナリーファ
-  イルをデコードして、全てのテレメトリの各パラメータ値を出力するツールを作成し
-  てください。出力方法や表示の仕方、粒度などは自由に決めて問題ありません。
+  =decode/ds_tlm.bin= は、NASAが開発する [[https://cfs.gsfc.nasa.gov/][cFS]] と呼ばれるオープンソースのフライトソフトウェアが生成した 
+  Telemetry (100 telemetry分) のバイナリーファイルです。
+  以下の情報をもとに、Telemetryのフォーマットを調査して、バイナリーファイルをデコードして、全てのテレメトリの各パラメータ値を出力するツールを作成してください。
+  出力方法や表示の仕方、粒度などは自由に決めて問題ありません。
   また指定されない限り任意の言語を使っていただいて構いません。
 
-  - =decode/ds_tlm.bin= は、DS applicationの House Keeping telemetry
-    の dump です
-  - House Keeping (HK) telemetry の パラメータ (Headerを除く) は、Big
-    endian とします
+  - =decode/ds_tlm.bin= は、DS applicationの House Keeping telemetry の dump です
+  - House Keeping (HK) telemetry の パラメータ (Headerを除く) は、Big endian とします
   - HK telemetry 内で定義されている OS_MAX_PATH_LEN は 32 とします
   - Headerで定義されている =CFE_MISSION_SB_PACKET_TIME_FORMAT= は =CFE_MISSION_SB_TIME_32_16_SUBS= とします
   - Headerで定義されている Timeの起点時間 (Epoch)は J2000.0 (=2000-01-01 11:58:55.816 UTC=) とします
   - DS application の version は 2.5.1、cFE の version は 6.5.0 とします
-  - 実行環境が Little / Big endianどちらでも動作することを想定してくだ
-    さい。ただし実際に Big Endian の環境で動作させる必要はありません
+  - 実行環境が Little / Big endianどちらでも動作することを想定してください。ただし実際に Big Endian の環境で動作させる必要はありません
   - ツールの使い方、動作環境の簡単な説明と、実行結果も添付してください
 
 * Design a Hexapod Antenna System
 
-  =hexapod/= ディレクトリに含まれる資料は、SSO 500 Km を周回する衛星と
-  通信するための S-Bandアンテナを搭載する Hexapod アンテナ台の試作に関
-  するものです。このアンテナ台を含む衛星トラッキングシステムの仕様書を、
-  自分なりに作成してください。
+  =hexapod/= ディレクトリに含まれる資料は、SSO 500 Km を周回する衛星と通信するための S-Bandアンテナを搭載する Hexapod アンテナ台の試作に関するものです。
+  このアンテナ台を含む衛星トラッキングシステムの仕様書を、自分なりに作成してください。
 
   衛星トラッキングシステムは、Acquisition of Signal から Loss of
   Signal までの 1パスの間、指定された衛星と通信をする必要があります。
-  パスの計算などは、 [[http://gpredict.oz9aec.net/][Gpredict]] とういうオープンソースソフトウェアを想定
-  していますが、他のソフトウェアを利用しても構いません。
+  パスの計算などは、 [[http://gpredict.oz9aec.net/][Gpredict]] というオープンソースソフトウェアを想定していますが、他のソフトウェアを利用しても構いません。
 
   仕様として必須なのは、以下の 3点です。
 
@@ -61,12 +51,10 @@ AI を利用しても問題ありません。ただし利用したものは教�
   2. LEO を周回する衛星との通信およびトラッキングできること
   3. S-Band を使用すること
 
-  これ以外の仕様は、自由に決定してもらって構いません。提供している資料
-  は、参考資料であり、不完全かつ不明な点を多く含んでいます。自分で決定
-  できない部分については、いつでも質問してください。
+  これ以外の仕様は、自由に決定してもらって構いません。提供している資料は、参考資料であり、不完全かつ不明な点を多く含んでいます。
+  自分で決定できない部分については、いつでも質問してください。
 
-  また全体のシステム構成の検討が難しい場合、必要となるコンポーネントに
-  特化した設計検討でも構いません。
+  また全体のシステム構成の検討が難しい場合、必要となるコンポーネントに特化した設計検討でも構いません。
 
   以下は、参考情報です。
 
