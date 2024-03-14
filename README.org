@@ -5,23 +5,9 @@ Space Cubics のソフトウェアエンジニアのポジションに応募し�
 
 ネットや本など、利用できるものはすべて利用してかまいません。もちろん AI を利用しても問題ありません。ただし利用したものは教えてください。
 
-* Fix Zephyr Issues
-
-  Space Cubics が開発するOBCには、[[https://zephyrproject.org/][Zephyr RTOS]] を採用しています。Zephyr
-  は、GitHubでオープンに開発されており、日々 issue が発行されています。
-  現在 open になっている Zephyr の [[https://github.com/zephyrproject-rtos/zephyr/issues][issue]] のうち、任意の複数の issue
-  を選択し、修正案を作成後、実際に Upstream に宛てて Pull Requestを作成してください。 
-  issue の中には、 “[[https://github.com/zephyrproject-rtos/zephyr/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22][Good first issue]]” 
-  と呼ばれる、初めてコントリビュートする人に優しい issue もあります。
-
-  - GitHubアカウントを保持していない場合は、新規に作成してください
-  - 選択する issue については、Cのソースコードを修正するものを選択してください (CMakeや、 Python スクリプト、ドキュメントなどの修正は除く)
-  - Git のコミットに関しては、[[https://cbea.ms/git-commit/][How to Write a Git Commit Message]] や
-    [[https://medium.com/@nawarpianist/git-commit-best-practices-dab8d722de99][Git commit best practices]] などを一読することをお勧めします
-
 * Create Telemetry Decoding Tool
 
-  =decode/ds_tlm.bin= は、NASAが開発する [[https://cfs.gsfc.nasa.gov/][cFS]] と呼ばれるオープンソースのフライトソフトウェアが生成した 
+  =decode/ds_tlm.bin= は、NASAが開発する [[https://cfs.gsfc.nasa.gov/][cFS]] と呼ばれるオープンソースのフライトソフトウェアが生成した
   Telemetry (100 telemetry分) のバイナリーファイルです。
   以下の情報をもとに、Telemetryのフォーマットを調査して、バイナリーファイルをデコードして、全てのテレメトリの各パラメータ値を出力するツールを作成してください。
   出力方法や表示の仕方、粒度などは自由に決めて問題ありません。
@@ -35,6 +21,20 @@ Space Cubics のソフトウェアエンジニアのポジションに応募し�
   - DS application の version は 2.5.1、cFE の version は 6.5.0 とします
   - 実行環境が Little / Big endianどちらでも動作することを想定してください。ただし実際に Big Endian の環境で動作させる必要はありません
   - ツールの使い方、動作環境の簡単な説明と、実行結果も添付してください
+
+* Fix Zephyr Issues
+
+  Space Cubics が開発するOBCには、[[https://zephyrproject.org/][Zephyr RTOS]] を採用しています。Zephyr
+  は、GitHubでオープンに開発されており、日々 issue が発行されています。
+  現在 open になっている Zephyr の [[https://github.com/zephyrproject-rtos/zephyr/issues][issue]] のうち、任意の複数の issue
+  を選択し、修正案を作成後、実際に Upstream に宛てて Pull Requestを作成してください。
+  issue の中には、 “[[https://github.com/zephyrproject-rtos/zephyr/issues?q=is%3Aopen+is%3Aissue+label%3A%22Good+first+issue%22][Good first issue]]”
+  と呼ばれる、初めてコントリビュートする人に優しい issue もあります。
+
+  - GitHubアカウントを保持していない場合は、新規に作成してください
+  - 選択する issue については、Cのソースコードを修正するものを選択してください (CMakeや、 Python スクリプト、ドキュメントなどの修正は除く)
+  - Git のコミットに関しては、[[https://cbea.ms/git-commit/][How to Write a Git Commit Message]] や
+    [[https://medium.com/@nawarpianist/git-commit-best-practices-dab8d722de99][Git commit best practices]] などを一読することをお勧めします
 
 * Design a Hexapod Antenna System
 
